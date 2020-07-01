@@ -55,7 +55,6 @@ jobs:
     
     - name: Apply yaml
       run: |
-        kubectl delete svc,deploy docker-kubernetes-api
         kubectl apply -f ./kubernetes.yml
         kubectl get services -o wide
    
