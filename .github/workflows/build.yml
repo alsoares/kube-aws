@@ -49,8 +49,13 @@ jobs:
       run: |
         # Push image to AWS ECR
         docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE $AWS_CLUSTER_NAME:latest
+  
   release:
-   name: Setup EKS
-   run: |
-    aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+    name: Release EKS
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Setup EKS
+      run: |
+        aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
    
