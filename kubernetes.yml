@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: docker-kubernetes-api
-          image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+          image: 173661549797.ecr.$AWS_DEFAULT_REGION.amazonaws.com/eks-andre:latest
           ports:
             - containerPort: 20001
           imagePullPolicy: Always
