@@ -56,4 +56,5 @@ jobs:
     - name: Apply yaml
       run: |
         kubectl apply -f ./kubernetes.yml
+        kubectl get services -o wide
    
